@@ -9,21 +9,11 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main" tools:context=".MainActivity">
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
-        android:layout_alignParentStart="false"
-        android:layout_toStartOf="@+id/mixPile"
-        android:layout_alignParentEnd="true" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/back_card"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentTop="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -32,4 +22,20 @@
         android:id="@+id/mixPile"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/imageView" />
+
+    <TextView
+        android:text="Touches le Tas !"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mixPile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="98dp"
+        android:id="@+id/textView" />
 </RelativeLayout>

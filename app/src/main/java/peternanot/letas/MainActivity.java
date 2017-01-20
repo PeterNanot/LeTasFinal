@@ -12,11 +12,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button mixPile;
-    ArrayList<Integer> imageArrayList = new ArrayList<>(52);
+    int i = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,78 @@ public class MainActivity extends AppCompatActivity {
         ImageView backCard = (ImageView) findViewById(R.id.back_card);
         backCard.setImageResource(R.drawable.dos_de_carte);
 
-        imageArrayList.add(R.drawable.dos_de_carte);
+        final ImageView imageContainer = (ImageView) findViewById(R.id.imageView);
+        final ArrayList<Integer> list = new ArrayList<>();
+
+        list.add(R.drawable.eight_of_clubs);
+        list.add(R.drawable.eight_of_diamonds);
+        list.add(R.drawable.eight_of_hearts);
+        list.add(R.drawable.eight_of_spades);
+        list.add(R.drawable.five_of_clubs);
+        list.add(R.drawable.five_of_diamonds);
+        list.add(R.drawable.five_of_hearts);
+        list.add(R.drawable.five_of_spades);
+        list.add(R.drawable.four_of_clubs);
+        list.add(R.drawable.four_of_diamonds);
+        list.add(R.drawable.four_of_hearts);
+        list.add(R.drawable.four_of_spades);
+        list.add(R.drawable.jack_of_clubs_fr);
+        list.add(R.drawable.jack_of_diamonds_fr);
+        list.add(R.drawable.jack_of_hearts_fr);
+        list.add(R.drawable.jack_of_spades_fr);
+        list.add(R.drawable.king_of_clubs_fr);
+        list.add(R.drawable.king_of_diamonds_fr);
+        list.add(R.drawable.king_of_hearts_fr);
+        list.add(R.drawable.king_of_spades_fr);
+        list.add(R.drawable.queen_of_clubs_fr);
+        list.add(R.drawable.queen_of_diamonds_fr);
+        list.add(R.drawable.queen_of_hearts_fr);
+        list.add(R.drawable.queen_of_spades_fr);
+        list.add(R.drawable.nine_of_clubs);
+        list.add(R.drawable.nine_of_diamonds);
+        list.add(R.drawable.nine_of_hearts);
+        list.add(R.drawable.nine_of_spades);
+        list.add(R.drawable.ten_of_clubs);
+        list.add(R.drawable.ten_of_diamonds);
+        list.add(R.drawable.ten_of_hearts);
+        list.add(R.drawable.ten_of_spades);
+        list.add(R.drawable.oneofclubsa);
+        list.add(R.drawable.oneofdiamondsa);
+        list.add(R.drawable.oneofheartsa);
+        list.add(R.drawable.oneofspadesa);
+        list.add(R.drawable.three_of_clubs);
+        list.add(R.drawable.three_of_diamonds);
+        list.add(R.drawable.three_of_hearts);
+        list.add(R.drawable.three_of_spades);
+        list.add(R.drawable.seven_of_clubs);
+        list.add(R.drawable.seven_of_diamonds);
+        list.add(R.drawable.seven_of_hearts);
+        list.add(R.drawable.seven_of_spades);
+        list.add(R.drawable.six_of_clubs);
+        list.add(R.drawable.six_of_diamonds);
+        list.add(R.drawable.six_of_hearts);
+        list.add(R.drawable.six_of_spades);
+        list.add(R.drawable.two_of_diamonds);
+        list.add(R.drawable.two_of_hearts);
+        list.add(R.drawable.two_of_spades);
+        list.add(R.drawable.twoofclubs);
+
+        Collections.shuffle(list);
+        imageContainer.setImageResource(list.get(0));
+
+        imageContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (i == list.size() + 1) {
+                    i = 0;
+                }
+                imageContainer.setImageResource(list.get(i));
+            }
+        });
+
+
+
+
 
     }
 
