@@ -17,7 +17,7 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
-    int i = 1;
+    int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView backCard = (ImageView) findViewById(R.id.back_card);
         backCard.setImageResource(R.drawable.dos_de_carte);
 
+        final Button button = (Button) findViewById(R.id.mixPile);
         final ImageView imageContainer = (ImageView) findViewById(R.id.imageView);
         final ArrayList<Integer> list = new ArrayList<>();
 
@@ -86,15 +87,28 @@ public class MainActivity extends AppCompatActivity {
         list.add(R.drawable.twoofclubs);
 
         Collections.shuffle(list);
-        imageContainer.setImageResource(list.get(0));
 
-        imageContainer.setOnClickListener(new View.OnClickListener() {
+        backCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (i == list.size() + 1) {
-                    i = 0;
+                if ((i == list.size()) || (i == -1)) {
+                    imageContainer.setImageResource(R.drawable.dos_de_carte);
+                    i = -1;
                 }
-                imageContainer.setImageResource(list.get(i));
+                else {
+                    imageContainer.setImageResource(list.get(i));
+                    i++;
+                }
+
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Collections.shuffle(list);
+                imageContainer.setImageResource(R.drawable.dos_de_carte);
+                i = 0;
             }
         });
 
