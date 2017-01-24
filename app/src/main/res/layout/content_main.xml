@@ -12,13 +12,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Melange le Tas"
+        android:text="@string/mixes_pile"
         android:id="@+id/mixPile"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:text="Touches le Tas !"
+        android:text="@string/touch_pile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/mixPile"
